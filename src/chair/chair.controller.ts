@@ -1,39 +1,42 @@
 import { Controller, Inject } from '@nestjs/common';
 import { ClientProxy, MessagePattern, Payload } from '@nestjs/microservices';
-import { smartchairCmd } from './smartchair-command';
+import { smartChairCmd } from './smartchair-command';
 import axios from 'axios';
+//import { error } from 'console';
 
-@Controller('chair')
-export class ChairController {
+@Controller('smatbed')
+export class BedController {
   constructor(@Inject('MQTT_SERVICE') private client: ClientProxy) {}
 
-  //chair
-  @MessagePattern('smartchair')
-  async handleSmartchair(@Payload() message: string) {
+  @MessagePattern('smartbed')
+  async handleSmartbed(@Payload() message: string) {
     const spitString = message.split('/', 5);
-    const deviceHost = spitString[0];
-    const deviceType = spitString[1];
-    const deviceName = spitString[2];
-    const cmd = spitString[3];
-    const token = spitString[4];
-    const url = smartchairCmd(deviceHost, deviceType, deviceName, cmd);
-    if (token == 'tokenxyz' && url) {
-      console.log(url);
-      //send command
+    const token = spitString[0];
+    const deviceHost = spitString[1];
+    const deviceType = spitString[2];
+    const deviceName = spitString[3];
+    const cmd = spitString[4];
+    const url = smartChairCmd(deviceHost, deviceType, deviceName, cmd, token);
+    console.log(url);
+    if (url) {
       await axios
-        .get(url, {
+        .post(url, {
           timeout: 5000,
         })
-        .then((res) => {
-          console.log('success: ', res);
-          axios.post('http://localhost:3001/history/create', {
-            hw_id: 1,
-            cmd: cmd,
-          });
+        .then((response) => {
+          // náº¿u chuá»—i tráº£ láº¡i lÃ  rá»—ng=> Ä‘iá»u khiá»ƒn khÃ´ng thÃ nh cÃ´ng
+          //   if (!response.data) {
+          //     console.log('retry');
+          //   }
+          //  console.log(response);
+          //    else
+          console.log('done!');
         })
         .catch((error) => {
-          if (error.code === 'ECONNABORT') {
-            console.log('timed out');
+          if (error.code === 'ENCONABORTED') {
+            console.log('please check led connection');
+          } else {
+            console.log('something wrong');
           }
         });
     } else {

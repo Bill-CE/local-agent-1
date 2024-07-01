@@ -11,10 +11,10 @@ export class InfluxService implements OnModuleInit {
 
   constructor() {
     this.influx = new InfluxDB({
-      host: '192.168.1.33',
-      database: 'home_assistant',
+      host: 'smartbed.local',
+      database: 'smartbed',
       port: 8086,
-      username: 'chronograf',
+      username: 'smartbed',
       password: 'smartbed',
     });
   }
