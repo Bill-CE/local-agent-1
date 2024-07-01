@@ -1,0 +1,59 @@
+chair: 
+    tokenxyz/chair-frame/switch/up/turn_on
+    tokenxyz/chair-frame/switch/up/turn_off
+    tokenxyz/chair-frame/switch/down/turn_on
+    tokenxyz/chair-frame/switch/down/turn_off
+    tokenxyz/chair-frame/switch/front/turn_on
+    tokenxyz/chair-frame/switch/front/turn_off
+    tokenxyz/chair-frame/switch/back/turn_on
+    tokenxyz/chair-frame/switch/back/turn_off
+    tokenxyz/chair-frame/button/bed/press
+    tokenxyz/chair-frame/button/chair/press
+    tokenxyz/chair-frame/button/default/press
+
+
+desk:
+    tokenxyz/desk-frame/switch/up/turn_on
+    tokenxyz/desk-frame/switch/up/turn_off
+    tokenxyz/desk-frame/switch/down/turn_on
+    tokenxyz/desk-frame/switch/down/turn_off
+
+glasses: 
+    tokenxyz/control-glassess/switch/head/turn_on
+    tokenxyz/control-glassess/switch/head/turn_off
+    tokenxyz/control-glassess/switch/door/turn_on
+    tokenxyz/control-glassess/switch/door/turn_off
+    tokenxyz/control-glassess/switch/foot/turn_on
+    tokenxyz/control-glassess/switch/foot/turn_off
+    tokenxyz/control-glassess/button/awake/press
+    tokenxyz/control-glassess/button/sleep/press
+
+bed:
+    tokenxyz/bed-frame/switch/up_head/turn_on
+    tokenxyz/bed-frame/switch/up_head/turn_off
+    tokenxyz/bed-frame/switch/down_head/turn_on
+    tokenxyz/bed-frame/switch/down_head/turn_off
+    tokenxyz/bed-frame/switch/up_foot/turn_on
+    tokenxyz/bed-frame/switch/up_foot/turn_off
+    tokenxyz/bed-frame/switch/down_foot/turn_on
+    tokenxyz/bed-frame/switch/down_foot/turn_off
+    tokenxyz/bed-frame/switch/head_massage/turn_on
+    tokenxyz/bed-frame/switch/head_massage/turn_off
+    tokenxyz/bed-frame/switch/foot_massage/turn_on
+    tokenxyz/bed-frame/switch/foot_massage/turn_off
+
+light:
+    tokenxyz/control-light/switch/light_1/turn_on
+    tokenxyz/control-light/switch/light_1/turn_off
+    tokenxyz/control-light/switch/light_2/turn_on
+    tokenxyz/control-light/switch/light_2/turn_off
+
+air: 
+    tokenxyz/air-control/climate/thermostat_climate_controller/set?mode=COOL
+    tokenxyz/air-control/climate/thermostat_climate_controller/set?mode=OFF
+    tokenxyz/air-control/climate/thermostat_climate_controller/set?target_temperature=23.5
+
+o2: 
+
+    tokenxyz/control-o2/button/on_off/press
+    
